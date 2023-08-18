@@ -13,9 +13,10 @@ export default function Layout({children, title = '', description = ''}) {
     <Header>
 
     </Header>
+    {children}
     <Footer/>
 
-        {children}
+      
     </>
   )
 }

@@ -14,13 +14,15 @@ export default function Footer() {
                   About Us
                 </Link>
 
+                <Link legacyBehavior href="/store">
+                  Store
+                </Link>
+
                 <Link legacyBehavior href="/blog">
                   Blog
                 </Link>
 
-                <Link legacyBehavior href="/store">
-                  Store
-                </Link>
+
           
             </nav>
             <p className={styles.copyright}>
