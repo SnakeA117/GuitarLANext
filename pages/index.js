@@ -8,7 +8,7 @@ export default function Home() {
       title={'Home'}
       description={'Music Blog, guitar sale and more'}
     >
-      <h1>Hello world en Next</h1>
+      <h1>Hello world in Next</h1>
     </Layout>
     </>
   )
