@@ -1,5 +1,5 @@
 import Layout from "@/components/layout"
-import Link from "next/link"
+
 
 
 const Store = () => {
@@ -7,8 +7,8 @@ const Store = () => {
     <Layout
          title={'Store'}
          description="Online Store, GuitarLA"
-    >Online 
-      <h1>About us</h1>
+    >
+      <h1>Store</h1>
     </Layout>
 
   )

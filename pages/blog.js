@@ -1,5 +1,5 @@
 import Layout from "@/components/layout"
-import Link from "next/link"
+
 
 
 const Blog = () => {
@@ -8,7 +8,7 @@ const Blog = () => {
          title={'Blog'}
          description="Our blog, GuitarLA"
     >
-      <h1>About us</h1>
+      <h1>Blog</h1>
     </Layout>
 
   )
