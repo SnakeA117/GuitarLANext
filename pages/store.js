@@ -4,7 +4,6 @@ import { ListGuitars } from "@/components/list-guitars"
 
 export default function Store({guitars}) {
 
-  console.log(guitars)
   return (
     <Layout
          title={'Store'}
@@ -13,7 +12,7 @@ export default function Store({guitars}) {
       <main className="contenedor"> 
           <h1 className="heading">Our collection</h1>
           <ListGuitars 
-
+              guitars={guitars} 
           />
       </main>
     </Layout>
@@ -21,14 +20,26 @@ export default function Store({guitars}) {
   )
 }
 
-export async function getStaticProps() {
-    const response = await fetch(`${process.env.API_URL}/guitars?populate=Image`)
-    const {data: guitars} = await response.json()
+// export async function getStaticProps() {
+//     const response = await fetch(`${process.env.API_URL}/guitars?populate=Image`)
+//     const {data: guitars} = await response.json()
 
-    return {
-      props: {
-        guitars
-      }
+//     return {
+//       props: {
+//         guitars
+//       }
+//     }
+// }
+
+export async function getServerSideProps() {
+  const response = await fetch(`${process.env.API_URL}/guitars?populate=Image`)
+  const {data: guitars} = await response.json()
+
+  return {
+    props: {
+      guitars
     }
+  }
 }
+
 
