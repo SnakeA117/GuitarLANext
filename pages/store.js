@@ -1,5 +1,5 @@
 import Layout from "@/components/layout"
-
+import { ListGuitars } from "@/components/list-guitars"
 
 
 const Store = () => {
@@ -8,7 +8,12 @@ const Store = () => {
          title={'Store'}
          description="Online Store, GuitarLA"
     >
-      <h1>Store</h1>
+      <main className="contenedor"> 
+          <h1 className="heading">Our collection</h1>
+          <ListGuitars 
+          
+          />
+      </main>
     </Layout>
 
   )
