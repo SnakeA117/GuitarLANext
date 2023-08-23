@@ -1,8 +1,8 @@
 import Layout from "@/components/layout"
-import { ListGuitars } from "@/components/list-guitars"
+import { Guitar } from "@/components/guitar"
 
 
-export default function Store({guitars}) {
+export function Store({guitars}) {
 
   return (
     <Layout
@@ -11,17 +11,23 @@ export default function Store({guitars}) {
     >
       <main className="contenedor"> 
           <h1 className="heading">Our collection</h1>
-          <ListGuitars 
-              guitars={guitars} 
-          />
+          {guitars.map(guitar => (
+            <Guitar 
+              key={guitar.id}
+              guitar={guitar.attributes}
+            />
+          ))}
       </main>
     </Layout>
 
   )
 }
 
+
+
+
 // export async function getStaticProps() {
-//     const response = await fetch(`${process.env.API_URL}/guitars?populate=Image`)
+//     const response = await fetch(`${process.env.API_URL}/guitars?populate=image`)
 //     const {data: guitars} = await response.json()
 
 //     return {
@@ -32,7 +38,7 @@ export default function Store({guitars}) {
 // }
 
 export async function getServerSideProps() {
-  const response = await fetch(`${process.env.API_URL}/guitars?populate=Image`)
+  const response = await fetch(`${process.env.API_URL}/guitars?populate=image`)
   const {data: guitars} = await response.json()
 
   return {
@@ -43,3 +49,4 @@ export async function getServerSideProps() {
 }
 
 
+export default Store
